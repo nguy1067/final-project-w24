@@ -4,7 +4,9 @@
   }
 
 body {
-    font-family: "Poppins", sans-serif; ;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    font-size: 1rem;
   }
 
   img {
@@ -13,28 +15,37 @@ body {
  
   h1 {
     font-size: 2.027rem;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 2rem;  
   }
+
   h2 {
     font-size: 1.802rem;
+    text-align: center;
+
   }
   h3 {
-    font-size: 1.266rem;
     text-transform: uppercase;
+    font-size: 1.266rem;
+    margin: 0;
+    margin-top: 1rem;
+    font-weight: 750;
   }
-  
 
-
-  .masthead{
+  .wrapper{
+      display: flex;
       max-width: 1200px;
       margin: 0 auto;
-      display: flex;
       justify-content: space-between;
       align-items: center;
-  }
-  
+  } 
+
+
+
   nav ul {
-      display: flex;
-      list-style: none;
+    display: flex;
+    list-style: none;
   }
   
   nav ul li{
@@ -45,71 +56,111 @@ body {
       color: black;
       text-transform: uppercase;
       text-decoration: none;
-    }
-  
+    } 
+
+
+ 
+
+    
     img.box {
       border-radius: 10px;
     }
   
-    .pic{
+    .picture{
       margin: 0 auto;
       max-width: 1200px;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);;
+      grid-template-rows: repeat(4, 1fr);;
       grid-template-areas: 
-      "div1 div1 div1"
-      "div1 div1 div1"
-      "div1 div1 div1"
-      "div2 div3 div4"
+      "box1 box1 box1"
+      "box1 box1 box1"
+      "box1 box1 box1"
+      "box2 box3 box4"
       ;
-      gap: 1em;
+
+      gap: 1.5em;
     }
   
-    .pic .box:nth-child(1) {
-      grid-area: div1;
+    .picture .box:nth-child(1) {
+      grid-area: box1;
     }
   
-    .pic .box:nth-child(2) {
-      grid-area: div2;
+    .picture .box:nth-child(2) {
+      grid-area: box2;
     }
-    .pic .box:nth-child(3) {
-      grid-area: div3;
+    .picture .box:nth-child(3) {
+      grid-area: box3;
     }
-    .pic .box:nth-child(4) {
-      grid-area: div4;
+    .picture .box:nth-child(4) {
+      grid-area: box4;
     }
   
-   
+    @media (min-width:768px){
+    
+      .picture{
+        grid-template-columns: repeat(2, 1fr);;
+        grid-template-rows: repeat(2, 1fr);;
+        grid-template-areas: 
+        "box1 box2"
+        "box3 box4"
+        ;
+      }
+    }
+
+    @media (min-width:960px){
   
-    #affair {
+      .collage {
+       display: flex;
+       max-width: 1200px;
+       align-items: flex-start;
+       justify-content: center;
+       margin: 0 auto;
+       
+      }
+    }
+
+
+
+  
+    #sweet-affair {
+      padding: 2em;
       margin: 0 auto;
       max-width: 1200px;
-      padding: 2em;
     }
   
-  #affair a:link,
-  #affair a:link {
-    padding: .5em 1em;
+  #sweet-affair a:link,
+  #sweet-affair a:link {
     background-color: black;
     color: #fff;
     text-decoration: none;
     border: 2px solid black;
-    border-radius: 4px;
-    
+    border-radius: 10px;
     margin-right: auto;
+    padding: .5em 1em;
+
   }
 
+  #sweet-affair h1 {
+    margin:0;
+    padding: 0;
+    }
+
+
+
+
+
+
+    /* Add to Cart Button */
   .btn {
-    font-weight: 500;
-    border: 0;
-    margin: 10px 0;
+    
     text-decoration: none;
-    background-color: #000;
     color: #fff;
-    padding: 5px 15px;
+    background-color: #000;
     border-radius: 4px;
-    transition: 0.3s;
+    font-weight: 700;
+    padding: 9px 20px;
+    border-width: 0;
 }
 
 .btn:hover {
@@ -118,18 +169,50 @@ body {
     box-shadow: 1px 1px 5px #000;
 }
   
-   .b-dough{
+
+
+
+
+
+/* Behind the Dough Section */
+
+   .behind-the-dough{
     margin: 0 auto;
     max-width: 1200px;
     padding: 2em;
     background-color: #fafafa;
   }
   
-  .b-dough h2{
+  .behind-the-dough h2{
     text-align: center;
   }
+
+
+  @media (min-width:768px){
   
-  .quotes {
+
+    .the-scoop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+      gap: 2em;
+    }
+  }
+
+  @media (min-width:960px){
+  
+  
+  
+    .behind-the-dough {
+     max-width: max-content;
+   
+    }
+  }
+
+
+  /* Quotes/What peeps say Section */
+  
+  .what-peeps-say {
     margin: 0 auto;
     max-width: 1200px;
     background-color: black;
@@ -137,24 +220,46 @@ body {
     padding: 2em;
   }
   
-  .quotes h2 {
+  .what-peeps-say h2 {
     text-align: center;
     padding-bottom: 1em;
   }
   
-  .quotes p:nth-child(2) {
+  .what-peeps-say p:nth-child(2) {
     font-style: italic;
     padding-bottom: 4em;
   }
   
-  .quotes p:nth-child(4) {
+  .what-peeps-say p:nth-child(4) {
     font-style: italic;
     padding-bottom: 4em;
   }
   
-  .quotes p:nth-child(6) {
+  .what-peeps-say p:nth-child(6) {
     font-style: italic;
   }
+
+  @media (min-width:768px){
+    .quotes {
+      display: flex;
+      justify-content: space-between;
+      gap: 2em;
+    }
+  }
+
+    
+@media (min-width:960px){
+  
+  .what-peeps-say {
+   max-width: max-content;
+  }
+
+
+  }
+
+
+/* Try it with Section */
+
   
   .try-it-with {
     margin: 0 auto;
@@ -167,48 +272,41 @@ body {
   }
 
 
-  div article:hover {
+  .try-it-with div article:hover {
     background-color: #222;
     color: #fff;
 }
-
-
-
   
-  .images-try {
+  .try-out {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);;
+    grid-template-rows: repeat(2, 1fr);;
     gap: 1em;
     text-align: center;
+
   }
   
-  .images-try article {
+ .try-out article {
     background-color: #fafafa;
     border-radius: 10px;
+
+  }
+
+    
+  @media (min-width:768px){
+    
+    .try-out {
+     grid-template-columns: repeat(4, 1fr);
+     grid-template-rows: 1fr;
+   }
+ }
+
+  /* curved boxes */
+  article img {
+    border-radius: 10px 10px 0 0;
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   footer {
     background-color: black;
     color: #fff;
@@ -216,57 +314,10 @@ body {
     text-align: center;
   }
   
-  
-  @media (min-width:768px) {
-  
-    .pic{
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      grid-template-areas: 
-      "div1 div2"
-      "div3 div4"
-      ;
-    }
-    .para {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-content: space-between;
-      gap: 2em;
-    }
-    .quotes-lvl {
-      display: flex;
-      justify-content: space-between;
-      gap: 2em;
-    }
-   .images-try{
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-   }
-  }
-  
-  @media (min-width:960px){
-  
-   .parent {
-    display: flex;
-    max-width: 1200px;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 0 auto;
-    
-   }
-  
-   .b-dough {
-    max-width: max-content;
-  
-   }
-  
-   .quotes {
-    max-width: max-content;
-   }
-  
 
- 
-   }
+
+
+
   
   
   
@@ -321,40 +372,6 @@ body {
 
 
 
-
-/* limited edition */
-
-#title {
-    font-weight: 450;
-}
-
-#limited {
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
-#margin {
-    margin: 0;
-}
-
-#btn {
-    font-weight: 500;
-    border: 0;
-    margin: 10px 0;
-    text-decoration: none;
-    background-color: #000;
-    color: #fff;
-    padding: 5px 15px;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-#btn:hover {
-    background-color: #f8fafc;
-    color: #222;
-    box-shadow: 1px 1px 5px #000;
-}
 
 
 
